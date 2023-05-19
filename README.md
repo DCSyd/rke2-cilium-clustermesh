@@ -62,6 +62,16 @@ Now test by curl to service and it will be load balanced between clusters
     curl test.test.svc
    
 
-In this setup cilium encryption not enabled.
+#In this setup cilium encryption not enabled.
+
+#Loadbalancing is enabled by default and once pool is created it will allocate IP
+
+    apiVersion: "cilium.io/v2alpha1"
+    kind: CiliumLoadBalancerIPPool
+    metadata:
+      name: "lbs-pool"
+    spec:
+      cidrs:
+      - cidr: "10.0.10.0/24"
 
 
