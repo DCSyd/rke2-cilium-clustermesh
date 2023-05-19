@@ -1,0 +1,45 @@
+Tested cilium config with RKE2 cluster from Rancher. CNI, operator, hubble and clustermesh will be running when cluster is up
+
+            rke2-cilium:
+              cluster:
+                id: 1
+                name: cl-1
+              clustermesh:
+                service:
+                  type: NodePort
+                useAPIServer: true
+              externalWorkloads:
+                enabled: true
+              hubble:
+                enabled: true
+                metrics:
+                  dashboards:
+                    enabled: true
+                relay:
+                  enabled: true
+                service:
+                  type: NodePort
+                ui:
+                  enabled: true
+                  ingress:
+                    enabled: true
+                    hosts:
+                      - hubble.sslip.io
+                  service:
+                    type: NodePort
+              ingressController:
+                enabled: true
+                service:
+                  type: NodePort
+              ipam:
+                operator:
+                  clusterPoolIPv4PodCIDR: 10.10.0.0/16
+              kubeProxyReplacement: strict
+              operator:
+                replicas: 1
+              tls:
+                ca:
+                  cert: >-
+                    LS0txxxxxxxxxx
+                  key: >-
+                    LS0Vxxxxxxxxx
