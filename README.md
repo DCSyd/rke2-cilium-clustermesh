@@ -62,6 +62,6 @@ Now test by curl to service and it will be load balanced between clusters
     curl test.test.svc
    
 
-In this setup no encryption used.
+In this setup cilium encryption not enabled.
 
 
