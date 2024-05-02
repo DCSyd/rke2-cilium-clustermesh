@@ -75,5 +75,6 @@ Now test by curl to service and it will be load balanced between clusters
       - cidr: "10.0.10.0/24"
 
 
-# For native routing, multi-pool, ingress, kubeproxy replacement
-`cilium install --chart-directory cilium/install/kubernetes/cilium --set bgpControlPlane.enabled=true --set routingMode=native --set envoy.enabled=false --set ipv4NativeRoutingCIDR="10.0.0.0/8" --set ingressController.default=true --set bpf.masquerade=true --set ipam.mode=multi-pool --set kubeProxyReplacement=true --set ipam.operator.autoCreateCiliumPodIPPools.default.ipv4.cidrs='{10.10.0.0/16}' --set ipam.operator.autoCreateCiliumPodIPPools.default.ipv4.maskSize=24 --set ipam.operator.autoCreateCiliumPodIPPools.pool11.ipv4.cidrs='{10.11.0.0/16}' --set ipam.operator.autoCreateCiliumPodIPPools.pool11.ipv4.maskSize=27`
+#For native routing, multi-pool, ingress, kubeproxy replacement
+    
+```cilium install --chart-directory cilium/install/kubernetes/cilium --set bgpControlPlane.enabled=true --set routingMode=native --set envoy.enabled=false --set ipv4NativeRoutingCIDR="10.0.0.0/8" --set ingressController.default=true --set bpf.masquerade=true --set ipam.mode=multi-pool --set kubeProxyReplacement=true --set ipam.operator.autoCreateCiliumPodIPPools.default.ipv4.cidrs='{10.10.0.0/16}' --set ipam.operator.autoCreateCiliumPodIPPools.default.ipv4.maskSize=24 --set ipam.operator.autoCreateCiliumPodIPPools.pool11.ipv4.cidrs='{10.11.0.0/16}' --set ipam.operator.autoCreateCiliumPodIPPools.pool11.ipv4.maskSize=27```
