@@ -74,6 +74,16 @@ Now test by curl to service and it will be load balanced between clusters
       cidrs:
       - cidr: "10.0.10.0/24"
 
+#Loadbalancing is enabled by default and once pool is created it will allocate IP
+
+    apiVersion: "cilium.io/v2alpha1"
+    kind: CiliumBGPPeeringPolicy
+    metadata:
+      name: vrouter1
+    spec:
+      virtualRouters:
+      - localASN: xxxxx
+        exportPodCIDR: true
 
 #For native routing, multi-pool, ingress, kubeproxy replacement
     
